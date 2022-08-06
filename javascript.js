@@ -6,3 +6,12 @@ for (let i = 0; i < 256; i++) {
     div.classList.add('inactive');
     container.appendChild(div);
 }
+
+function hover(element, enter) {
+    element.addEventListener('mouseenter', enter);
+}
+
+hover(document.querySelector('#container > div'), (e) => {
+        e.target.classList.remove('inactive');
+        e.target.classList.add('active');
+    });
