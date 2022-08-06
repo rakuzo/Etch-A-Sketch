@@ -1,6 +1,8 @@
 #container {
     margin: 0px;
     padding: 0px;
+    width: 600px;
+    height: 600px;
     border: 1px solid black;
     display: flex;
     flex-wrap: wrap;
@@ -9,8 +11,8 @@
 #container div {
     margin: 0px;
     padding: 0px;
-    width: 30px;
-    height: 30px;
+    flex: 1 0 auto;
+    width: 35px;
     background-color: gray;
-    border: 1px solid green;
+    border: 1px solid black;
 }
