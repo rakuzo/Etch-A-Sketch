@@ -8,14 +8,14 @@ for (let i = 0; i < 256; i++) {
     container.appendChild(div);
 }
 
-function hover(element, enter) {
+function draw(element, enter) {
     element.addEventListener('mouseenter', enter);
 }
 
 const boxes = document.querySelectorAll('#box');
 
 for (let box of boxes) {
-    hover(box, (e) => {
+    draw(box, (e) => {
         e.target.classList.remove('inactive');
         e.target.classList.add('active');
         });
