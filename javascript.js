@@ -52,12 +52,21 @@ function detectAllBox () {
     }
 }
 
+function resetAllBox () {
+    const squares = document.querySelectorAll('#box');
+    for (let box of squares) {
+        // box.className = '';
+        box.removeAttribute('class');
+        box.classList.add('inactive');
+    }
+}
+
 function clearContainer () {
     container.innerHTML = '';
 }
 
 const resetButton = document.querySelector('#reset');
-resetButton.addEventListener('click', clearContainer);
+resetButton.addEventListener('click', resetAllBox);
 
 const btn = document.querySelector('#btn');
 btn.addEventListener('click', modifyBoxes);
