@@ -56,6 +56,18 @@ function resetAllBox () {
     }
 }
 
+function createRainbow () {
+    const nodes = document.querySelectorAll('#box');
+    const color = ['red','green','blue','orange','yellow','indigo','violet'];
+    for (let node of nodes) {
+        let random = Math.floor(Math.random() * color.length);
+        draw(node, (e) => {
+            e.target.removeAttribute('class');
+            e.target.classList.add(color[random]);
+        })
+    }
+}
+
 function clearContainer () {
     container.innerHTML = '';
 }
@@ -65,5 +77,8 @@ resetButton.addEventListener('click', resetAllBox);
 
 const btn = document.querySelector('#btn');
 btn.addEventListener('click', modifyBoxes);
+
+const rainbow = document.querySelector('#rainbow')
+rainbow.addEventListener('click', createRainbow);
 
 createBoxes();
