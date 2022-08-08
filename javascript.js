@@ -8,13 +8,7 @@ function createBoxes () {
         div.classList.add('inactive');
         container.appendChild(div);
     }
-    const boxes = document.querySelectorAll('#box');
-    for (let box of boxes) {
-        draw(box, (e) => {
-            e.target.classList.remove('inactive');
-            e.target.classList.add('active');
-            });
-    }
+    detectAllBox();
 }
 
 function modifyBoxes () {
@@ -27,6 +21,14 @@ function modifyBoxes () {
         div.classList.add('inactive');
         container.appendChild(div);
     }
+    detectAllBox();
+}
+
+function draw (element, enter) {
+    element.addEventListener('mouseenter', enter);
+}
+
+function detectAllBox () {
     const boxes = document.querySelectorAll('#box');
     for (let box of boxes) {
         draw(box, (e) => {
@@ -34,10 +36,6 @@ function modifyBoxes () {
             e.target.classList.add('active');
             });
     }
-}
-
-function draw(element, enter) {
-    element.addEventListener('mouseenter', enter);
 }
 
 function resetContainer () {
