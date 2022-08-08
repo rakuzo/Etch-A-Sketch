@@ -12,7 +12,7 @@ function createBoxes () {
 }
 
 function modifyBoxes () {
-    resetContainer();
+    clearContainer();
     let boxNumber = prompt('Input Number (1-100):');
     let double = boxNumber * boxNumber;
     for (let i = 0; i < double; i++) {
@@ -38,12 +38,12 @@ function detectAllBox () {
     }
 }
 
-function resetContainer () {
+function clearContainer () {
     container.innerHTML = '';
 }
 
 const resetButton = document.querySelector('#reset');
-resetButton.addEventListener('click', resetContainer);
+resetButton.addEventListener('click', clearContainer);
 
 const btn = document.querySelector('#btn');
 btn.addEventListener('click', modifyBoxes);
