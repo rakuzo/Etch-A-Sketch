@@ -56,6 +56,16 @@ function resetAllBox () {
     }
 }
 
+function createSolidColor () {
+    const pixel = document.querySelectorAll('#box');
+    for (let pix of pixel) {
+        draw(pix, (e) => {
+            pix.removeAttribute('class');
+            pix.classList.add('active');
+        });
+    }
+}
+
 function createRainbow () {
     const nodes = document.querySelectorAll('#box');
     const color = ['red','green','blue','orange','yellow','indigo','violet'];
@@ -64,7 +74,7 @@ function createRainbow () {
         draw(node, (e) => {
             e.target.removeAttribute('class');
             e.target.classList.add(color[random]);
-        })
+        });
     }
 }
 
@@ -80,5 +90,8 @@ btn.addEventListener('click', modifyBoxes);
 
 const rainbow = document.querySelector('#rainbow')
 rainbow.addEventListener('click', createRainbow);
+
+const solid = document.querySelector('#solid')
+solid.addEventListener('click', createSolidColor);
 
 createBoxes();
