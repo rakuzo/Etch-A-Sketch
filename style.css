@@ -1,5 +1,7 @@
 :root {
     --width : 37.5px;
+    --black : black;
+    --white : white;
 }
 
 body {
@@ -46,9 +48,9 @@ button {
 }
 
 .inactive {
-    background-color: white;
+    background-color: var(--white);
 }
 
 .active {
-    background-color: black;
+    background-color: var(--black);
 }
