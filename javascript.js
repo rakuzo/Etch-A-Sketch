@@ -28,10 +28,10 @@ function modifyBoxes () {
 
 let r = document.querySelector(':root');
 
-// function getBoxWidth () {
-//     let rs = getComputedStyle(r);
-//     alert("The value of width is: " + rs.getPropertyValue('--width'));
-// }
+function getBoxWidth () {
+    let rs = getComputedStyle(r);
+    alert("The value of width is: " + rs.getPropertyValue('--width'));
+}
 
 // function setBoxWidth () {
 //     let newWidth = 6;
@@ -62,8 +62,8 @@ resetButton.addEventListener('click', clearContainer);
 const btn = document.querySelector('#btn');
 btn.addEventListener('click', modifyBoxes);
 
-// const boxWidth = document.querySelector('#boxwidth');
-// boxWidth.addEventListener('click', getBoxWidth);
+const boxWidth = document.querySelector('#boxwidth');
+boxWidth.addEventListener('click', getBoxWidth);
 
 // const finWidth = document.querySelector('#setwidth');
 // finWidth.addEventListener('click', setBoxWidth);
