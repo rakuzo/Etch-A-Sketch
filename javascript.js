@@ -15,6 +15,8 @@ function modifyBoxes () {
     clearContainer();
     let boxNumber = prompt('Input Number (1-100):');
     let double = boxNumber * boxNumber;
+    let newWidth = (600 / boxNumber);
+    r.style.setProperty('--width', newWidth + 'px')
     for (let i = 0; i < double; i++) {
         const div = document.createElement('div');
         div.setAttribute('id','box');
@@ -23,6 +25,18 @@ function modifyBoxes () {
     }
     detectAllBox();
 }
+
+let r = document.querySelector(':root');
+
+// function getBoxWidth () {
+//     let rs = getComputedStyle(r);
+//     alert("The value of width is: " + rs.getPropertyValue('--width'));
+// }
+
+// function setBoxWidth () {
+//     let newWidth = 6;
+//     r.style.setProperty('--width', newWidth + 'px')
+// }
 
 function draw (element, enter) {
     element.addEventListener('mouseenter', enter);
@@ -47,5 +61,11 @@ resetButton.addEventListener('click', clearContainer);
 
 const btn = document.querySelector('#btn');
 btn.addEventListener('click', modifyBoxes);
+
+// const boxWidth = document.querySelector('#boxwidth');
+// boxWidth.addEventListener('click', getBoxWidth);
+
+// const finWidth = document.querySelector('#setwidth');
+// finWidth.addEventListener('click', setBoxWidth);
 
 createBoxes();
