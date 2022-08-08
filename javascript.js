@@ -1,8 +1,8 @@
 const container = document.querySelector('#container');
 
-function createBoxes () {
-    updateContainer();
-    let boxNumber = prompt('Input Number:');
+function modifyBoxes () {
+    resetContainer();
+    let boxNumber = prompt('Input Number (1-100):');
     let double = boxNumber * boxNumber;
     for (let i = 0; i < double; i++) {
         const div = document.createElement('div');
@@ -23,13 +23,13 @@ function draw(element, enter) {
     element.addEventListener('mouseenter', enter);
 }
 
-function updateContainer () {
+function resetContainer () {
     container.innerHTML = '';
 }
 
 const resetButton = document.querySelector('#reset');
-resetButton.addEventListener('click', updateContainer);
+resetButton.addEventListener('click', resetContainer);
 
 const btn = document.querySelector('#btn');
-btn.addEventListener('click', createBoxes);
+btn.addEventListener('click', modifyBoxes);
 
