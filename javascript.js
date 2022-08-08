@@ -1,6 +1,7 @@
 const container = document.querySelector('#container');
 
 function createBoxes () {
+    updateContainer();
     let boxNumber = prompt('Input Number:');
     let double = boxNumber * boxNumber;
     for (let i = 0; i < double; i++) {
@@ -22,6 +23,13 @@ function draw(element, enter) {
     element.addEventListener('mouseenter', enter);
 }
 
+function updateContainer () {
+    container.innerHTML = '';
+}
+
+const resetButton = document.querySelector('#reset');
+resetButton.addEventListener('click', updateContainer);
 
 const btn = document.querySelector('#btn');
-btn.addEventListener('click', createBoxes)
+btn.addEventListener('click', createBoxes);
+
