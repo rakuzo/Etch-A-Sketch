@@ -11,6 +11,8 @@ function createBoxes () {
     detectAllBox();
 }
 
+let rootCSS = document.querySelector(':root');
+
 function modifyBoxes () {
     let boxNumber = prompt('Input Number (1-100):');
     let a = parseInt(boxNumber);
@@ -20,18 +22,16 @@ function modifyBoxes () {
         clearContainer();
         let double = boxNumber * boxNumber;
         let newWidth = (600 / boxNumber);
-        r.style.setProperty('--width', newWidth + 'px')
+        rootCSS.style.setProperty('--width', newWidth + 'px')
         for (let i = 0; i < double; i++) {
             const div = document.createElement('div');
             div.setAttribute('id','box');
             div.classList.add('inactive');
-            container.appendChild(div);
         }
+        container.appendChild(div);
         detectAllBox();
     }
 }
-
-let r = document.querySelector(':root');
 
 function draw (element, enter) {
     element.addEventListener('mouseenter', enter);
