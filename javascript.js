@@ -33,11 +33,6 @@ function modifyBoxes () {
 
 let r = document.querySelector(':root');
 
-function getBoxWidth () {
-    let rs = getComputedStyle(r);
-    alert("The value of width is: " + rs.getPropertyValue('--width'));
-}
-
 function draw (element, enter) {
     element.addEventListener('mouseenter', enter);
 }
@@ -54,10 +49,10 @@ function detectAllBox () {
 
 function resetAllBox () {
     const squares = document.querySelectorAll('#box');
-    for (let box of squares) {
+    for (let square of squares) {
         // box.className = '';
-        box.removeAttribute('class');
-        box.classList.add('inactive');
+        square.removeAttribute('class');
+        square.classList.add('inactive');
     }
 }
 
@@ -70,8 +65,5 @@ resetButton.addEventListener('click', resetAllBox);
 
 const btn = document.querySelector('#btn');
 btn.addEventListener('click', modifyBoxes);
-
-const boxWidth = document.querySelector('#boxwidth');
-boxWidth.addEventListener('click', getBoxWidth);
 
 createBoxes();
