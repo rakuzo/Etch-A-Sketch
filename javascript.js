@@ -12,18 +12,23 @@ function createBoxes () {
 }
 
 function modifyBoxes () {
-    clearContainer();
     let boxNumber = prompt('Input Number (1-100):');
-    let double = boxNumber * boxNumber;
-    let newWidth = (600 / boxNumber);
-    r.style.setProperty('--width', newWidth + 'px')
-    for (let i = 0; i < double; i++) {
-        const div = document.createElement('div');
-        div.setAttribute('id','box');
-        div.classList.add('inactive');
-        container.appendChild(div);
+    let a = parseInt(boxNumber);
+    if (Number.isNaN(a) || a > 100 || a < 1) {
+        alert('Please input only number between 1-100');
+    } else {
+        clearContainer();
+        let double = boxNumber * boxNumber;
+        let newWidth = (600 / boxNumber);
+        r.style.setProperty('--width', newWidth + 'px')
+        for (let i = 0; i < double; i++) {
+            const div = document.createElement('div');
+            div.setAttribute('id','box');
+            div.classList.add('inactive');
+            container.appendChild(div);
+        }
+        detectAllBox();
     }
-    detectAllBox();
 }
 
 let r = document.querySelector(':root');
@@ -32,11 +37,6 @@ function getBoxWidth () {
     let rs = getComputedStyle(r);
     alert("The value of width is: " + rs.getPropertyValue('--width'));
 }
-
-// function setBoxWidth () {
-//     let newWidth = 6;
-//     r.style.setProperty('--width', newWidth + 'px')
-// }
 
 function draw (element, enter) {
     element.addEventListener('mouseenter', enter);
@@ -64,8 +64,5 @@ btn.addEventListener('click', modifyBoxes);
 
 const boxWidth = document.querySelector('#boxwidth');
 boxWidth.addEventListener('click', getBoxWidth);
-
-// const finWidth = document.querySelector('#setwidth');
-// finWidth.addEventListener('click', setBoxWidth);
 
 createBoxes();
