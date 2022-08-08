@@ -27,8 +27,8 @@ function modifyBoxes () {
             const div = document.createElement('div');
             div.setAttribute('id','box');
             div.classList.add('inactive');
+            container.appendChild(div);
         }
-        container.appendChild(div);
         detectAllBox();
     }
 }
