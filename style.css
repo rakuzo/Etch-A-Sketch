@@ -2,12 +2,38 @@
     --width : 37.5px;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+}
+
+button {
+    text-align: center;
+    padding: 8px;
+    background-color: darkcyan;
+    color: white;
+    border: 0px;
+    border-radius: 5px;
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
 #container {
     margin: 0px;
     padding: 0px;
     width: 600px;
     height: 600px;
-    border: 1px solid black;
+    border: 10px solid black;
+    border-radius: 5px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -21,10 +47,8 @@
 
 .inactive {
     background-color: white;
-    /* border: 1px solid gray; */
 }
 
 .active {
     background-color: black;
-    /* border: 1px solid gray; */
 }
