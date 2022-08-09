@@ -36,6 +36,12 @@ button {
     margin-bottom: 10px;
 }
 
+button:active {
+    background-color: white;
+    color: darkcyan;
+    transition: 0.2s;
+}
+
 #container {
     margin: 0px;
     padding: 0px;
