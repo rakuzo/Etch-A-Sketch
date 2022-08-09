@@ -50,7 +50,6 @@ function detectAllBox () {
 function resetAllBox () {
     const squares = document.querySelectorAll('#box');
     for (let square of squares) {
-        // box.className = '';
         square.removeAttribute('class');
         square.classList.add('inactive');
     }
@@ -78,6 +77,21 @@ function createRainbow () {
     }
 }
 
+function createFlicker () {
+    const dots =  document.querySelectorAll('#box');
+    for (let dot of dots) {
+        let randRed = Math.floor(Math.random() * 256);
+        let randGreen = Math.floor(Math.random() * 256);
+        let randBlue = Math.floor(Math.random() * 256);
+        draw(dot, (e) => {
+            rootCSS.style.setProperty('--random', `rgb(${randRed}, ${randGreen}, ${randBlue})`);
+            e.target.removeAttribute('class');
+            e.target.classList.add('color');
+        })
+
+    }
+}
+
 function clearContainer () {
     container.innerHTML = '';
 }
@@ -93,5 +107,8 @@ rainbow.addEventListener('click', createRainbow);
 
 const solid = document.querySelector('#solid')
 solid.addEventListener('click', createSolidColor);
+
+const flicker = document.querySelector('#flicker');
+flicker.addEventListener('click', createFlicker)
 
 createBoxes();

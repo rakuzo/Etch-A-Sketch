@@ -2,6 +2,7 @@
     --width : 37.5px;
     --black : black;
     --white : white;
+    --random : pink;
 }
 
 html,
@@ -15,7 +16,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: bisque;
+    background-color: #201f1e;
 }
 
 #header {
@@ -60,12 +61,20 @@ button:active {
     width: var(--width);
 }
 
+#bottom {
+    margin-top: 10px;
+}
+
 .inactive {
     background-color: var(--white);
 }
 
 .active {
     background-color: var(--black);
+}
+
+.color {
+    background-color: var(--random);
 }
 
 .red {
